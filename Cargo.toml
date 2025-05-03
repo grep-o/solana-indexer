@@ -1,5 +1,5 @@
 [workspace]
-resolver = "2"
+resolver = "3"
 members = ["indexer", "server"]
 
 [workspace.dependencies]
@@ -10,3 +10,27 @@ solana-client = "2.2.7"
 spl-token = "8.0.0"
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+
+[profile.dev]
+incremental = true
+debug = 0
+strip = "none"
+debug-assertions = true
+overflow-checks = false # Speed up runtime, re-enable if needed
+lto = false
+panic = 'unwind'
+rpath = false
+opt-level = 0
+codegen-units = 256
+
+[profile.release]
+incremental = false      # Full rebuild for optimization
+opt-level = 3            # Max runtime speed
+debug = false
+strip = "none"           # Smaller binary
+debug-assertions = false
+overflow-checks = false
+lto = true               # Good perf boost, reasonable compile time
+panic = 'abort'          # Smaller binary, no unwind overhead
+codegen-units = 1        # Use performance cores, balance speed and optimization
+rpath = false
