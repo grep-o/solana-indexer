@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["indexer", "server"]
+
+[workspace.dependencies]
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = { version = "1.44.2", features = ["full"] }
+solana-sdk = "2.2.2"
+solana-client = "2.2.7"
+spl-token = "8.0.0"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
