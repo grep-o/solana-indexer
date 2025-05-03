@@ -52,7 +52,7 @@ Returns current blockchain metadata and indexer status.
 }
 ```
 
-#### GET /account/{address} - Account Information
+#### `GET /account/{address}` - Account Information
 Retrieves SOL balance and token balances for a given account.\
 
 Parameters:
@@ -74,7 +74,7 @@ Parameters:
 }
 ```
 
-#### GET /signature/{signature} - Transaction Details
+#### `GET /signature/{signature}` - Transaction Details
 Fetches transaction details by signature hash.
 
 Parameters:
@@ -92,7 +92,7 @@ Parameters:
 }
 ```
 
-#### GET /recent - Recent Transactions
+#### `GET /recent` - Recent Transactions
 Returns the most recent transactions.
 Query Parameters:
 
