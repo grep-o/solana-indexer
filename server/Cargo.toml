@@ -1,0 +1,19 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+indexer = { path = "../indexer" }
+
+serde = { workspace = true }
+tokio = { workspace = true }
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+spl-token = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+axum = { version = "0.8.4", features = ["macros"] }
+solana-account-decoder = "2.2.7"
+dotenv = "0.15.0"
